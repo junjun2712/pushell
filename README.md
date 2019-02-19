@@ -28,3 +28,16 @@ pushell启动 <br/>
 >![3](screenshot/5.jpg)
 
 
+
+
+您好 环境已经搭建完了，但是不知道token验证码，登录不了，怎么获取验证码，求大神指点？？？
+你好，代码内置的key是：NFP7DMPDPEFK6I6S ,你可以在手机上使用 freeotp软件，添加这个key,生成的token就可以正常验证了，二次认证路径pushell/two_auth.py 你可以自行修改
+class TwoAuth():
+def **init** (self,secret='NFP7DMPDPEFK6I6S'):
+self.secret = 'NFP7DMPDPEFK6I6S'
+self.totp = pyotp.TOTP(secret)
+def gen_token(self):
+
+
+请问pushell token这个工具怎么下载
+这个是自己改的，应用市场上没有，手机你可以使用freeotp,或是google authenticator, chrome 可以使用OTP Safe for Chrome，任何OTP开源软件都可以
